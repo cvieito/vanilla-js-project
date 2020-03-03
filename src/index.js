@@ -24,24 +24,27 @@ function formatDate(date) {
 
 function displayWeatherCondition(response) {
   console.log(response.data);
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
-  // document.querySelector("#weather-icon").innerHTML =
-  //   response.data.weather[0].icon;
-  document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.main.temp
+  let temperatureElement = document.querySelector("#current-temp");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#weather-description");
+  let iconElement = document.querySelector("#icon");
+  let maxTemperatureElement = document.querySelector("#max-temp");
+  let minTemperatureElement = document.querySelector("#min-temp");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  document.querySelector("#max-temp").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#min-temp").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed * 0.001 * 3600
-  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  maxTemperatureElement.innerHTML = Math.round(response.data.main.temp_max);
+  minTemperatureElement.innerHTML = Math.round(response.data.main.temp_min);
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed * 0.001 * 3600);
 }
 
 function searchCity(city) {
