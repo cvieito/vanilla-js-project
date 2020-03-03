@@ -4,16 +4,8 @@ body {
 }
 
 /* this is here only for editing purposes */
-/* div {
+div {
   border: 1px solid red;
-} */
-
-.weather-app {
-  max-width: 50%;
-  border: 2px solid #9cdbdb;
-  border-radius: 10px;
-  padding: 20px 30px;
-  margin: 0 auto;
 }
 
 h1 {
@@ -40,12 +32,29 @@ h4 {
   color: #9cdbdb;
 }
 
-.btn {
-  margin-left: 0;
+ul {
+  padding-left: 0;
 }
 
-#btn-current {
-  margin-left: 5px;
+li {
+  list-style: none;
+}
+
+a {
+  color: #9cdbdb;
+}
+
+/* classes */
+.weather-app {
+  max-width: 600px;
+  border: 2px solid #9cdbdb;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 0 auto;
+}
+
+.btn {
+  margin-left: 0;
 }
 
 .fa-search {
@@ -56,28 +65,10 @@ h4 {
   margin-bottom: 30px;
 }
 
-#weather-description {
-  color: #5a6275;
-  font-style: italic;
-}
-
-.units {
+.weather-temperature .units {
   position: relative;
-  text-align: right;
-  margin-right: 5%;
-  margin-top: -40%;
-}
-
-#weather-icon {
-  position: relative;
-  font-size: 85px;
-  padding-right: 20px;
-  margin-bottom: 30px;
-}
-
-#current-temp {
-  position: relative;
-  font-size: 60px;
+  font-size: 16px;
+  top: -34px;
 }
 
 .more-info {
@@ -93,14 +84,6 @@ h4 {
 
 .next-days {
   padding-top: 20px;
-}
-
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style: none;
 }
 
 .week-day {
@@ -136,8 +119,21 @@ li {
   padding-left: 0;
 }
 
-a {
-  color: #9cdbdb;
+/* ids */
+#btn-current {
+  margin-left: 5px;
+}
+
+#weather-description {
+  color: #5a6275;
+  font-style: italic;
+}
+
+#current-temp {
+  position: relative;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
 }
 
 #credit {
