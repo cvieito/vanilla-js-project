@@ -22,6 +22,19 @@ function formatDate(date) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 function displayWeatherCondition(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#current-temp");
@@ -45,6 +58,34 @@ function displayWeatherCondition(response) {
   minTemperatureElement.innerHTML = Math.round(response.data.main.temp_min);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 0.001 * 3600);
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h4>
+      ${formatHours(forecast.dt * 1000)}
+      </h4>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+        ${Math.round(forecast.main.temp_max)}°
+        </strong> 
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+    `;
+  }
 }
 
 function searchCity(city) {
