@@ -1,0 +1,145 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 2.5%;
+}
+
+/* this is here only for editing purposes */
+/* div {
+  border: 1px solid red;
+} */
+
+.weather-app {
+  max-width: 50%;
+  border: 2px solid #9cdbdb;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #9cdbdb;
+  font-size: 28px;
+}
+
+h2,
+h3 {
+  color: #5a6275;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  margin: auto;
+  font-size: 16px;
+  color: #9cdbdb;
+}
+
+.btn {
+  margin-left: 0;
+}
+
+#btn-current {
+  margin-left: 5px;
+}
+
+.fa-search {
+  font-size: 15px;
+}
+
+.search-form {
+  margin-bottom: 30px;
+}
+
+#weather-description {
+  color: #5a6275;
+  font-style: italic;
+}
+
+.units {
+  position: relative;
+  text-align: right;
+  margin-right: 5%;
+  margin-top: -40%;
+}
+
+#weather-icon {
+  position: relative;
+  font-size: 85px;
+  padding-right: 20px;
+  margin-bottom: 30px;
+}
+
+#current-temp {
+  position: relative;
+  font-size: 60px;
+}
+
+.more-info {
+  color: #9cdbdb;
+}
+
+.max-min {
+  text-align: left;
+  font-size: 15px;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.next-days {
+  padding-top: 20px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.week-day {
+  font-size: 15px;
+  text-align: center;
+}
+
+.week-day-temp {
+  font-size: 11px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.week-day-icon {
+  font-size: 30px;
+  text-align: center;
+}
+
+.fa-cloud-rain {
+  color: rgb(5, 90, 155);
+}
+
+.fa-sun {
+  color: #e68f0e;
+}
+
+.next-days {
+  color: #9cdbdb;
+  font-weight: bold;
+}
+
+.btn-column {
+  padding-left: 0;
+}
+
+a {
+  color: #9cdbdb;
+}
+
+#credit {
+  text-align: center;
+}
