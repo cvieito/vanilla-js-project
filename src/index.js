@@ -51,12 +51,14 @@ function searchCity(city) {
   let apiKey = "352858b872f9136668a7d5437feb3f30";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition); // we're calling the function displayWeatherCondition written above
+
+  // need to add the forecast
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  searchCity(city); // we're calling the function search written above...
+  let cityInput = document.querySelector("#city-input").value;
+  searchCity(cityInput); // we're calling the function search written above...
 }
 
 function searchLocation(position) {
@@ -73,6 +75,26 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temp");
+  // when I click on ºF I want to remove the active class on the celsius link...
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let dateElement = document.querySelector("#date");
 let date = new Date();
 dateElement.innerHTML = formatDate(date);
@@ -82,5 +104,11 @@ form.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#btn-current");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Viana do Castelo");
