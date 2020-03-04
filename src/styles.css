@@ -15,6 +15,11 @@ h1 {
 
 input[type="search"]:focus {
   border: 1px solid #9cdbdb;
+  font-style: italic;
+}
+
+::placeholder {
+  font-style: italic;
 }
 
 h2,
@@ -101,7 +106,7 @@ a {
   color: #9cdbdb;
 }
 
-.next-days {
+.next-hours {
   padding-top: 20px;
   color: #9cdbdb;
   font-weight: bold;

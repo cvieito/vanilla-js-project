@@ -54,48 +54,44 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-12">
-              <h2 id="city"></h2>
-              <h3 id="date"></h3>
-              <p id="weather-description"></p>
-              <div class="row">
-                <div class="col-6">
-                  <div class="clearfix weather-temperature">
-                    <img
-                      src=""
-                      alt="overcast clouds"
-                      class="float-left"
-                      id="icon"
-                    />
-                    <div class="float-left">
-                      <strong id="current-temp"></strong>
-                      <span class="units">
-                        <a id="celsius-link" class="active" href="#">°C</a> |
-                        <a id="fahrenheit-link" href="#">°F</a></span
-                      >
-                    </div>
+          <div class="overview">
+            <h2 id="city"></h2>
+            <h3 id="date"></h3>
+            <p id="weather-description"></p>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img
+                    src=""
+                    alt="overcast clouds"
+                    class="float-left"
+                    id="icon"
+                  />
+                  <div class="float-left">
+                    <strong id="current-temp"></strong>
+                    <span class="units">
+                      <a id="celsius-link" class="active" href="#">°C</a> |
+                      <a id="fahrenheit-link" href="#">°F</a></span
+                    >
                   </div>
                 </div>
+              </div>
 
-                <div class="col-6" id="more-info">
-                  <span class="more-info">Max:</span>
-                  <span id="max-temp"> </span> °C<br />
-                  <span class="more-info">Min:</span>
-                  <span id="min-temp"> </span> °C<br />
-                  <span class="more-info">Humidity:</span>
-                  <span id="humidity"> </span>%
-                  <br />
-                  <span class="more-info">Wind:</span>
-                  <span id="wind"> </span> km/h
-                </div>
+              <div class="col-6" id="more-info">
+                <span class="more-info">Max:</span>
+                <span id="max-temp"> </span> °C<br />
+                <span class="more-info">Min:</span>
+                <span id="min-temp"> </span> °C<br />
+                <span class="more-info">Humidity:</span>
+                <span id="humidity"> </span>%
+                <br />
+                <span class="more-info">Wind:</span>
+                <span id="wind"> </span> km/h
               </div>
             </div>
 
-            <div class="col-12">
-              <h3 class="next-days">Next days</h3>
-              <div class="row weather-forecast" id="forecast"></div>
-            </div>
+            <h3 class="next-hours">Next hours</h3>
+            <div class="row weather-forecast" id="forecast"></div>
           </div>
         </div>
         <small id="credit">
