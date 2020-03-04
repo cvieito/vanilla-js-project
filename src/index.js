@@ -19,7 +19,7 @@ function formatDate(date) {
   ];
   let day = days[dayIndex];
 
-  return `${day}, ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function formatHours(timestamp) {
@@ -70,7 +70,7 @@ function displayForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
     <div class="col-2">
-      <h4>
+      <h4 class="hours">
       ${formatHours(forecast.dt * 1000)}
       </h4>
       <img
@@ -94,7 +94,9 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition); // we're calling the function displayWeatherCondition written above
 
-  // need to add the forecast
+  // forecast
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
