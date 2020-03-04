@@ -36,7 +36,6 @@ function formatHours(timestamp) {
 }
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#weather-description");
@@ -46,7 +45,9 @@ function displayWeatherCondition(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
@@ -118,8 +119,8 @@ function getCurrentLocation(event) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#current-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   // when I click on ºF I want to remove the active class on the celsius link...
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");

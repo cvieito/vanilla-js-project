@@ -45,12 +45,15 @@ li {
 } */
 
 /* classes */
-.weather-app {
+.weather-app-wrapper {
   max-width: 600px;
+  margin: 30px auto;
+}
+
+.weather-app {
   border: 2px solid #9cdbdb;
   border-radius: 10px;
   padding: 20px 30px;
-  margin: 0 auto;
 }
 
 .btn {
@@ -71,13 +74,19 @@ li {
   top: -34px;
 }
 
+.weather-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
 .more-info {
   color: #9cdbdb;
 }
 
 .max-min {
   text-align: left;
-  font-size: 15px;
+  /* font-size: 15px; */
   margin-top: 10px;
   padding-left: 0;
 }
@@ -136,6 +145,11 @@ li {
   font-weight: 400;
 }
 
+#more-info {
+  font-size: 15px;
+  line-height: 18px;
+}
+
 #credit {
-  text-align: center;
+  text-align: left;
 }

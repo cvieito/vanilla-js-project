@@ -20,81 +20,82 @@
 
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>What's the weather?</h1>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1>What's the weather?</h1>
 
-        <div class="row">
-          <div class="col-9">
-            <form class="search-form" id="search-form">
-              <input
-                type="search"
-                id="city-input"
-                placeholder="Type a city..."
-                autofocus="on"
-                class="form-control shadow-sm"
-              />
-            </form>
-          </div>
-          <div class="col-3 btn-column">
-            <button
-              type="submit"
-              class="btn btn-light shadow-sm"
-              id="btn-search"
-            >
-              <i class="fas fa-search"></i>
-            </button>
-            <button
-              type="submit"
-              class="btn btn-light shadow-sm"
-              id="btn-current"
-            >
-              <i class="fas fa-map-marker-alt"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <h2 id="city"></h2>
-            <h3 id="date"></h3>
-            <p id="weather-description"></p>
-            <div class="row">
-              <div class="col-6">
-                <div class="clearfix weather-temperature">
-                  <img
-                    src=""
-                    alt="overcast clouds"
-                    class="float-left"
-                    id="icon"
-                  />
-                  <div class="float-left">
-                    <strong id="current-temp"></strong>
-                    <span class="units">
-                      <a id="celsius-link" class="active" href="#">°C</a> |
-                      <a id="fahrenheit-link" href="#">°F</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-6">
-                <span class="more-info">Max:</span>
-                <span id="max-temp"> </span> °C<br />
-                <span class="more-info">Min:</span>
-                <span id="min-temp"> </span> °C<br />
-                <span class="more-info">Humidity:</span>
-                <span id="humidity"> </span>%
-                <br />
-                <span class="more-info">Wind:</span>
-                <span id="wind"> </span> km/h
-              </div>
+          <div class="row">
+            <div class="col-9">
+              <form class="search-form" id="search-form">
+                <input
+                  type="search"
+                  id="city-input"
+                  placeholder="Type a city..."
+                  autofocus="on"
+                  class="form-control shadow-sm"
+                />
+              </form>
+            </div>
+            <div class="col-3 btn-column">
+              <button
+                type="submit"
+                class="btn btn-light shadow-sm"
+                id="btn-search"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+              <button
+                type="submit"
+                class="btn btn-light shadow-sm"
+                id="btn-current"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
             </div>
           </div>
 
-          <div class="col-12">
-            <h3 class="next-days">Next days</h3>
-            <div class="row weather-forecast" id="forecast"></div>
-            <!-- <div class="row">
+          <div class="row">
+            <div class="col-12">
+              <h2 id="city"></h2>
+              <h3 id="date"></h3>
+              <p id="weather-description"></p>
+              <div class="row">
+                <div class="col-6">
+                  <div class="clearfix weather-temperature">
+                    <img
+                      src=""
+                      alt="overcast clouds"
+                      class="float-left"
+                      id="icon"
+                    />
+                    <div class="float-left">
+                      <strong id="current-temp"></strong>
+                      <span class="units">
+                        <a id="celsius-link" class="active" href="#">°C</a> |
+                        <a id="fahrenheit-link" href="#">°F</a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6" id="more-info">
+                  <span class="more-info">Max:</span>
+                  <span id="max-temp"> </span> °C<br />
+                  <span class="more-info">Min:</span>
+                  <span id="min-temp"> </span> °C<br />
+                  <span class="more-info">Humidity:</span>
+                  <span id="humidity"> </span>%
+                  <br />
+                  <span class="more-info">Wind:</span>
+                  <span id="wind"> </span> km/h
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <h3 class="next-days">Next days</h3>
+              <div class="row weather-forecast" id="forecast"></div>
+              <!-- <div class="row">
               <div class="col">
                 <ul>
                   <li class="week-day">Wednesday</li>
@@ -139,15 +140,19 @@
                 </ul>
               </div>
             </div> -->
+            </div>
           </div>
         </div>
+        <small id="credit">
+          <a
+            href="https://github.com/cvieito/vanilla-js-project"
+            target="_blank"
+          >
+            Open-source code
+          </a>
+          by Catarina Vieito
+        </small>
       </div>
-      <p id="credit">
-        <a href="https://github.com/cvieito/my-weather-app" target="_blank">
-          Open-source code
-        </a>
-        by Catarina Vieito.
-      </p>
     </div>
   </body>
   <script src="./src/index.js"></script>
