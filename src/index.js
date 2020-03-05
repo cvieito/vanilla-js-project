@@ -46,6 +46,9 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector("#wind");
 
   celsiusTemperature = response.data.main.temp;
+  maxCelsiusElement = response.data.main.temp_max;
+  minCelsiusElement = response.data.main.temp_min;
+  console.log(response.data.main.temp_max);
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
@@ -55,8 +58,8 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  maxTemperatureElement.innerHTML = Math.round(response.data.main.temp_max);
-  minTemperatureElement.innerHTML = Math.round(response.data.main.temp_min);
+  maxTemperatureElement.innerHTML = Math.round(maxCelsiusElement);
+  minTemperatureElement.innerHTML = Math.round(minCelsiusElement);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 0.001 * 3600);
 }
@@ -127,6 +130,14 @@ function displayFahrenheitTemperature(event) {
   fahrenheitLink.classList.add("active");
   celsiusLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  let maxTemperatureElement = document.querySelector("#max-temp");
+  let maxFahrenheitElement = (maxCelsiusElement * 9) / 5 + 32;
+  maxTemperatureElement.innerHTML = Math.round(maxFahrenheitElement);
+
+  let minTemperatureElement = document.querySelector("#min-temp");
+  let minFahrenheitElement = (minCelsiusElement * 9) / 5 + 32;
+  minTemperatureElement.innerHTML = Math.round(minFahrenheitElement);
 }
 
 function displayCelsiusTemperature(event) {
@@ -135,6 +146,12 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
   let temperatureElement = document.querySelector("#current-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let maxTemperatureElement = document.querySelector("#max-temp");
+  maxTemperatureElement.innerHTML = Math.round(maxCelsiusElement);
+
+  let minTemperatureElement = document.querySelector("#min-temp");
+  minTemperatureElement.innerHTML = Math.round(minCelsiusElement);
 }
 
 let celsiusTemperature = null;
