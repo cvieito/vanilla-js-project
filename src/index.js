@@ -71,6 +71,7 @@ function displayForecast(response) {
 
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
+
     forecastElement.innerHTML += `
     <div class="col">
       <h4 class="hours">
@@ -82,13 +83,16 @@ function displayForecast(response) {
         }@2x.png"
       />
       <div class="weather-forecast-temperature">
-        <strong>
+        <strong id="max-forecast">
         ${Math.round(forecast.main.temp_max)}°
         </strong> 
-        ${Math.round(forecast.main.temp_min)}°
+        <span id="min-forecast"> ${Math.round(forecast.main.temp_min)}° </span>
       </div>
     </div>
     `;
+
+    maxCelsiusForecast = forecast.main.temp_max;
+    minCelsiusForecast = forecast.main.temp_min;
   }
 }
 
@@ -138,6 +142,14 @@ function displayFahrenheitTemperature(event) {
   let minTemperatureElement = document.querySelector("#min-temp");
   let minFahrenheitElement = (minCelsiusElement * 9) / 5 + 32;
   minTemperatureElement.innerHTML = Math.round(minFahrenheitElement);
+
+  let maxForecastElement = document.querySelector("#max-forecast");
+  let maxFahrenheitForecast = (maxCelsiusForecast * 9) / 5 + 32;
+  maxForecastElement.innerHTML = Math.round(maxFahrenheitForecast);
+
+  let minForecastElement = document.querySelector("#min-forecast");
+  let minFahrenheitForecast = (minCelsiusForecast * 9) / 5 + 32;
+  minForecastElement.innerHTML = Math.round(minFahrenheitForecast);
 }
 
 function displayCelsiusTemperature(event) {
@@ -152,6 +164,12 @@ function displayCelsiusTemperature(event) {
 
   let minTemperatureElement = document.querySelector("#min-temp");
   minTemperatureElement.innerHTML = Math.round(minCelsiusElement);
+
+  let maxForecastElement = document.querySelector("#max-forecast");
+  maxForecastElement.innerHTML = Math.round(maxCelsiusForecast);
+
+  let minForecastElement = document.querySelector("#min-forecast");
+  minForecastElement.innerHTML = Math.round(minCelsiusForecast);
 }
 
 let celsiusTemperature = null;
